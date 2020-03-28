@@ -1,0 +1,11 @@
+.image__container {
+    align-items: center;
+    justify-content: center;
+    max-width: 80vw;
+    max-height: 80vh;
+    position: fixed;
+    z-index: 1;
+    background-size: auto;
+    background-position: center;
+    background-repeat: no-repeat;
+}
