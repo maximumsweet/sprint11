@@ -1,4 +1,6 @@
 // Объявление переменных и навешивание слушателей
+import "../pages/style.css";
+
 const mainModule = (function () {
     const form = document.forms.newCard;
     const userInfo = document.querySelector('.user-info');
