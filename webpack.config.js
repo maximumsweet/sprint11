@@ -1,5 +1,6 @@
 const path = require('path'); // подключаем path к конфигу вебпак
 const MiniCssExtractPlugin = require("mini-css-extract-plugin"); // Подключили к проекту плагин
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
     entry: { main: './src/index.js' },
@@ -25,7 +26,12 @@ module.exports = {
     plugins: [ 
         new MiniCssExtractPlugin({
             filename: 'style.css'
-        })
+        }),
+        new HtmlWebpackPlugin({
+            inject: false, // стили НЕ нужно прописывать внутри тегов
+            hash: true, // для страницы нужно считать хеш
+            template: './index.html', // откуда брать образец для сравнения с текущим видом проекта
+            filename: 'index.html' // имя выходного файла, то есть того, что окажется в папке dist после сборки
+          })
     ]
 }
-// переписали точку выхода, используя утилиту path
