@@ -1,5 +1,5 @@
 // Объявление переменных и навешивание слушателей
-import "../pages/style.css";
+import "./pages/style.css";
 
 const mainModule = (function () {
     const form = document.forms.newCard;

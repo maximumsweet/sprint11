@@ -13,10 +13,20 @@ module.exports = {
         rules: [
             {
                 test: /\.js$/, // регулярное выражение, которое ищет все js файлы
-                exclude: /node_modules/, // исключает папку node_modules
                 use: {
                     loader: "babel-loader" // весь JS обрабатывается пакетом babel-loader
-                }
+                },
+                exclude: /node_modules/ // исключает папку node_modules
+            },
+            {
+                test: /\.(png|jpg|gif|ico|svg)$/,
+                use: [
+                    'file-loader?name=./images/[name].[ext]', // указали папку, куда складывать изображения
+                    {
+                        loader: 'image-webpack-loader',
+                        options: {}
+                    },
+                ]
             },
             {
                 test: /\.css$/, // применять это правило только к CSS-файлам
@@ -30,9 +40,12 @@ module.exports = {
         }),
         new HtmlWebpackPlugin({
             inject: false, // стили НЕ нужно прописывать внутри тегов
-            template: './index.html', // откуда брать образец для сравнения с текущим видом проекта
+            template: './src/index.html', // откуда брать образец для сравнения с текущим видом проекта
             filename: 'index.html' // имя выходного файла, то есть того, что окажется в папке dist после сборки
         }),
-        new WebpackMd5Hash()
+        new WebpackMd5Hash(),
+        new webpack.DefinePlugin({
+            NODE_ENV: JSON.stringify(process.env.NODE_ENV)
+        })
     ]
 };

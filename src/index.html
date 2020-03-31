@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Mesto</title>
-  <link rel="stylesheet" href="<%= htmlWebpackPlugin.files.chunks.main.css =>">
+  <link rel="stylesheet" href="<%=htmlWebpackPlugin.files.chunks.main.css =>">
 </head>
 <body>
   <div class="root">
@@ -43,16 +43,16 @@
       </div>
   </div>
 
-  <script src="src/Api.js"></script>
-  <script src="src/initialCards.js"></script>
-  <script src="src/CardList.js"></script>
-  <script src="src/Card.js"></script>
-  <script src="src/Popup.js"></script>
-  <script src="src/PopupCard.js"></script>
-  <script src="src/PopupEdit.js"></script>
-  <script src="src/UserInfo.js"></script>
-  <script src="src/FormValidator.js"></script>
-  <script src="src/OpenImage.js"></script>
+  <script src="./modules/Api.js"></script>
+  <script src="./modules/initialCards.js"></script>
+  <script src="./modules/CardList.js"></script>
+  <script src="./modules/Card.js"></script>
+  <script src="./modules/Popup.js"></script>
+  <script src="./modules/PopupCard.js"></script>
+  <script src="./modules/PopupEdit.js"></script>
+  <script src="./modules/UserInfo.js"></script>
+  <script src="./modules/FormValidator.js"></script>
+  <script src="./modules/OpenImage.js"></script>
   <script src="<%= htmlWebpackPlugin.files.chunks.main.entry %>"></script>
 </body>
 </html>
