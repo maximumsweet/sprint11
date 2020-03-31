@@ -1,5 +1,7 @@
 // Класс для всплывающего окна формы добавления карточки
-class PopupCard extends Popup {
+import Popup from "./Popup";
+
+export default class PopupCard extends Popup {
     constructor(container, cardList, apiCards) {
         super(container.element, container.elemClose);
         this.cardList = cardList;

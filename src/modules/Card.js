@@ -1,5 +1,5 @@
 // Класс, создающий карточку
-class Card {
+export default class Card {
     constructor(cardsArr, openImageCallback, api) {
         this.api = api;
         this.cardsArr = cardsArr;

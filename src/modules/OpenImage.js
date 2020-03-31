@@ -1,5 +1,5 @@
 // Открытие картинки при клике по ней и закрытие
-class OpenImage {
+export default class OpenImage {
     constructor(container) {
         this.container = container;
     }

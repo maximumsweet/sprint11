@@ -1,7 +1,19 @@
 // Объявление переменных и навешивание слушателей
 import "./pages/style.css";
 
-const mainModule = (function () {
+import Api from "./modules/Api";
+import Card from "./modules/Card";
+import CardList from "./modules/CardList";
+import FormValidator from "./modules/FormValidator";
+import OpenImage from "./modules/OpenImage";
+import Popup from "./modules/Popup";
+import PopupCard from "./modules/PopupCard";
+import PopupEdit from "./modules/PopupEdit";
+import UserInfo from "./modules/UserInfo";
+
+(function () {
+    const serverUrl = NODE_ENV === 'development' ? 'http://praktikum.tk/cohort8' : 'https://praktikum.tk/cohort8';
+
     const form = document.forms.newCard;
     const userInfo = document.querySelector('.user-info');
 
@@ -13,7 +25,7 @@ const mainModule = (function () {
     const openImage = new OpenImage(document.querySelector('.root'));
 
     const api = new Api({
-        baseUrl: 'http://95.216.175.5/cohort8',
+        baseUrl: serverUrl,
         headers: {
             authorization: '9f37db10-74c5-4b85-b9cd-ea5999c50582',
             'Content-Type': 'application/json'
@@ -61,4 +73,4 @@ const mainModule = (function () {
         .catch((err) => {
             console.log(`Ошибка ${err}`);
         });
-}());
+})();

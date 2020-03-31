@@ -1,5 +1,5 @@
 // Класс для универсальной валидации любого поля формы
-class FormValidator {
+export default class FormValidator {
     constructor(form) {
         this.form = form;
     }
