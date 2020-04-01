@@ -37,6 +37,8 @@ export default class OpenImage {
 
     closeImage() {
         const imagePopup = document.querySelector('.image');
-        imagePopup.parentNode.removeChild(imagePopup);
+        if (imagePopup) {
+            imagePopup.parentNode.removeChild(imagePopup);
+        }
     }
 }
