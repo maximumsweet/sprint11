@@ -1,5 +1,5 @@
 // Открытие картинки при клике по ней и закрытие
-class OpenImage {
+export default class OpenImage {
     constructor(container) {
         this.container = container;
     }
@@ -37,6 +37,8 @@ class OpenImage {
 
     closeImage() {
         const imagePopup = document.querySelector('.image');
-        imagePopup.parentNode.removeChild(imagePopup);
+        if (imagePopup) {
+            imagePopup.parentNode.removeChild(imagePopup);
+        }
     }
 }

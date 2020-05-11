@@ -1,5 +1,7 @@
 // Класс для всплывающего окна всплывающего окна формы информации о пользователе
-class PopupEdit extends Popup {
+import Popup from "./Popup";
+
+export default class PopupEdit extends Popup {
     constructor(container, infoUser, api) {
         super(container.element, container.elemClose);
         this.api = api;

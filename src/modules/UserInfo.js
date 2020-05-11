@@ -1,5 +1,5 @@
 // Класс для работы с данными пользователя
-class UserInfo {
+export default class UserInfo {
     constructor(title, subtitle) {
         this.title = title;
         this.subtitle = subtitle;
